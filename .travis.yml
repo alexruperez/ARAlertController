@@ -1,4 +1,6 @@
 language: objective-c
-xcode_sdk: iphonesimulator8.1
-xcode_project: ARAlertController.xcodeproj
-xcode_scheme: ARAlertController
+before_install:
+- gem install xcpretty
+script:
+- set -o pipefail
+- xcodebuild -project ARAlertController.xcodeproj -scheme ARAlertController test -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
