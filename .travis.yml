@@ -1,3 +1,3 @@
 language: objective-c
 xcode_project: ARAlertController.xcodeproj
-xcode_scheme: ARAlertControllerTests
+xcode_scheme: ARAlertController
