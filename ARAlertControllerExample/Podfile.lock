@@ -1,0 +1,10 @@
+PODS:
+  - ARAlertController (0.1.0)
+
+DEPENDENCIES:
+  - ARAlertController (~> 0.1)
+
+SPEC CHECKSUMS:
+  ARAlertController: d040538c2a81f47c65340bc918b08d3a84c9d3b7
+
+COCOAPODS: 0.35.0

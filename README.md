@@ -27,6 +27,8 @@ it, simply add the following line to your Podfile:
 * `ARAlertController.m`
 * `ARAlertController.h`
 
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
 ### Example
 
 ```objectivec
