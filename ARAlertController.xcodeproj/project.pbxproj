@@ -10,6 +10,7 @@
 		D5E13A681A8F737B00C9A5F2 /* ARAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E13A671A8F737B00C9A5F2 /* ARAlertController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5E13A6E1A8F737C00C9A5F2 /* ARAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E13A621A8F737B00C9A5F2 /* ARAlertController.framework */; };
 		D5E13A751A8F737C00C9A5F2 /* ARAlertControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E13A741A8F737C00C9A5F2 /* ARAlertControllerTests.m */; };
+		D5E13A7F1A8F73B800C9A5F2 /* ARAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E13A7E1A8F73B800C9A5F2 /* ARAlertController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		D5E13A6D1A8F737C00C9A5F2 /* ARAlertControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARAlertControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E13A731A8F737C00C9A5F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5E13A741A8F737C00C9A5F2 /* ARAlertControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARAlertControllerTests.m; sourceTree = "<group>"; };
+		D5E13A7E1A8F73B800C9A5F2 /* ARAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARAlertController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				D5E13A671A8F737B00C9A5F2 /* ARAlertController.h */,
+				D5E13A7E1A8F73B800C9A5F2 /* ARAlertController.m */,
 				D5E13A651A8F737B00C9A5F2 /* Supporting Files */,
 			);
 			path = ARAlertController;
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5E13A7F1A8F73B800C9A5F2 /* ARAlertController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -305,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,6 +398,7 @@
 				D5E13A7A1A8F737C00C9A5F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5E13A7B1A8F737C00C9A5F2 /* Build configuration list for PBXNativeTarget "ARAlertControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +407,7 @@
 				D5E13A7D1A8F737C00C9A5F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

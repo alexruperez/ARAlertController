@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5E13A8F1A8F901900C9A5F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E13A8E1A8F901900C9A5F2 /* main.m */; };
+		D5E13A921A8F901900C9A5F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E13A911A8F901900C9A5F2 /* AppDelegate.m */; };
+		D5E13A951A8F901900C9A5F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E13A941A8F901900C9A5F2 /* ViewController.m */; };
+		D5E13A981A8F901900C9A5F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5E13A961A8F901900C9A5F2 /* Main.storyboard */; };
+		D5E13A9A1A8F901900C9A5F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5E13A991A8F901900C9A5F2 /* Images.xcassets */; };
+		D5E13AA91A8F901A00C9A5F2 /* ARAlertControllerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E13AA81A8F901A00C9A5F2 /* ARAlertControllerExampleTests.m */; };
+		D5E13ABD1A8F905300C9A5F2 /* ARAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E13AB81A8F903B00C9A5F2 /* ARAlertController.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5E13AA31A8F901A00C9A5F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5E13A811A8F901900C9A5F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5E13A881A8F901900C9A5F2;
+			remoteInfo = ARAlertControllerExample;
+		};
+		D5E13AB71A8F903B00C9A5F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5E13AB21A8F903B00C9A5F2 /* ARAlertController.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D5E13A621A8F737B00C9A5F2;
+			remoteInfo = ARAlertController;
+		};
+		D5E13AB91A8F903B00C9A5F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5E13AB21A8F903B00C9A5F2 /* ARAlertController.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D5E13A6D1A8F737C00C9A5F2;
+			remoteInfo = ARAlertControllerTests;
+		};
+		D5E13ABE1A8F9E0B00C9A5F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5E13AB21A8F903B00C9A5F2 /* ARAlertController.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D5E13A611A8F737B00C9A5F2;
+			remoteInfo = ARAlertController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5E13A891A8F901900C9A5F2 /* ARAlertControllerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARAlertControllerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E13A8D1A8F901900C9A5F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5E13A8E1A8F901900C9A5F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D5E13A901A8F901900C9A5F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D5E13A911A8F901900C9A5F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D5E13A931A8F901900C9A5F2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D5E13A941A8F901900C9A5F2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D5E13A971A8F901900C9A5F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D5E13A991A8F901900C9A5F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D5E13AA21A8F901A00C9A5F2 /* ARAlertControllerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARAlertControllerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E13AA71A8F901A00C9A5F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5E13AA81A8F901A00C9A5F2 /* ARAlertControllerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARAlertControllerExampleTests.m; sourceTree = "<group>"; };
+		D5E13AB21A8F903B00C9A5F2 /* ARAlertController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ARAlertController.xcodeproj; path = ../ARAlertController.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5E13A861A8F901900C9A5F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E13ABD1A8F905300C9A5F2 /* ARAlertController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E13A9F1A8F901A00C9A5F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5E13A801A8F901900C9A5F2 = {
+			isa = PBXGroup;
+			children = (
+				D5E13AB21A8F903B00C9A5F2 /* ARAlertController.xcodeproj */,
+				D5E13A8B1A8F901900C9A5F2 /* ARAlertControllerExample */,
+				D5E13AA51A8F901A00C9A5F2 /* ARAlertControllerExampleTests */,
+				D5E13A8A1A8F901900C9A5F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5E13A8A1A8F901900C9A5F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5E13A891A8F901900C9A5F2 /* ARAlertControllerExample.app */,
+				D5E13AA21A8F901A00C9A5F2 /* ARAlertControllerExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5E13A8B1A8F901900C9A5F2 /* ARAlertControllerExample */ = {
+			isa = PBXGroup;
+			children = (
+				D5E13A901A8F901900C9A5F2 /* AppDelegate.h */,
+				D5E13A911A8F901900C9A5F2 /* AppDelegate.m */,
+				D5E13A931A8F901900C9A5F2 /* ViewController.h */,
+				D5E13A941A8F901900C9A5F2 /* ViewController.m */,
+				D5E13A961A8F901900C9A5F2 /* Main.storyboard */,
+				D5E13A991A8F901900C9A5F2 /* Images.xcassets */,
+				D5E13A8C1A8F901900C9A5F2 /* Supporting Files */,
+			);
+			path = ARAlertControllerExample;
+			sourceTree = "<group>";
+		};
+		D5E13A8C1A8F901900C9A5F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5E13A8D1A8F901900C9A5F2 /* Info.plist */,
+				D5E13A8E1A8F901900C9A5F2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5E13AA51A8F901A00C9A5F2 /* ARAlertControllerExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5E13AA81A8F901A00C9A5F2 /* ARAlertControllerExampleTests.m */,
+				D5E13AA61A8F901A00C9A5F2 /* Supporting Files */,
+			);
+			path = ARAlertControllerExampleTests;
+			sourceTree = "<group>";
+		};
+		D5E13AA61A8F901A00C9A5F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5E13AA71A8F901A00C9A5F2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5E13AB31A8F903B00C9A5F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5E13AB81A8F903B00C9A5F2 /* ARAlertController.framework */,
+				D5E13ABA1A8F903B00C9A5F2 /* ARAlertControllerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5E13A881A8F901900C9A5F2 /* ARAlertControllerExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5E13AAC1A8F901A00C9A5F2 /* Build configuration list for PBXNativeTarget "ARAlertControllerExample" */;
+			buildPhases = (
+				D5E13A851A8F901900C9A5F2 /* Sources */,
+				D5E13A861A8F901900C9A5F2 /* Frameworks */,
+				D5E13A871A8F901900C9A5F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5E13ABF1A8F9E0B00C9A5F2 /* PBXTargetDependency */,
+			);
+			name = ARAlertControllerExample;
+			productName = ARAlertControllerExample;
+			productReference = D5E13A891A8F901900C9A5F2 /* ARAlertControllerExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5E13AA11A8F901A00C9A5F2 /* ARAlertControllerExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5E13AAF1A8F901A00C9A5F2 /* Build configuration list for PBXNativeTarget "ARAlertControllerExampleTests" */;
+			buildPhases = (
+				D5E13A9E1A8F901A00C9A5F2 /* Sources */,
+				D5E13A9F1A8F901A00C9A5F2 /* Frameworks */,
+				D5E13AA01A8F901A00C9A5F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5E13AA41A8F901A00C9A5F2 /* PBXTargetDependency */,
+			);
+			name = ARAlertControllerExampleTests;
+			productName = ARAlertControllerExampleTests;
+			productReference = D5E13AA21A8F901A00C9A5F2 /* ARAlertControllerExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5E13A811A8F901900C9A5F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = alexruperez;
+				TargetAttributes = {
+					D5E13A881A8F901900C9A5F2 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					D5E13AA11A8F901A00C9A5F2 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = D5E13A881A8F901900C9A5F2;
+					};
+				};
+			};
+			buildConfigurationList = D5E13A841A8F901900C9A5F2 /* Build configuration list for PBXProject "ARAlertControllerExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5E13A801A8F901900C9A5F2;
+			productRefGroup = D5E13A8A1A8F901900C9A5F2 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D5E13AB31A8F903B00C9A5F2 /* Products */;
+					ProjectRef = D5E13AB21A8F903B00C9A5F2 /* ARAlertController.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D5E13A881A8F901900C9A5F2 /* ARAlertControllerExample */,
+				D5E13AA11A8F901A00C9A5F2 /* ARAlertControllerExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D5E13AB81A8F903B00C9A5F2 /* ARAlertController.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ARAlertController.framework;
+			remoteRef = D5E13AB71A8F903B00C9A5F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D5E13ABA1A8F903B00C9A5F2 /* ARAlertControllerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ARAlertControllerTests.xctest;
+			remoteRef = D5E13AB91A8F903B00C9A5F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5E13A871A8F901900C9A5F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E13A981A8F901900C9A5F2 /* Main.storyboard in Resources */,
+				D5E13A9A1A8F901900C9A5F2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E13AA01A8F901A00C9A5F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5E13A851A8F901900C9A5F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E13A951A8F901900C9A5F2 /* ViewController.m in Sources */,
+				D5E13A921A8F901900C9A5F2 /* AppDelegate.m in Sources */,
+				D5E13A8F1A8F901900C9A5F2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E13A9E1A8F901A00C9A5F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E13AA91A8F901A00C9A5F2 /* ARAlertControllerExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5E13AA41A8F901A00C9A5F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5E13A881A8F901900C9A5F2 /* ARAlertControllerExample */;
+			targetProxy = D5E13AA31A8F901A00C9A5F2 /* PBXContainerItemProxy */;
+		};
+		D5E13ABF1A8F9E0B00C9A5F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ARAlertController;
+			targetProxy = D5E13ABE1A8F9E0B00C9A5F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D5E13A961A8F901900C9A5F2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5E13A971A8F901900C9A5F2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D5E13AAA1A8F901A00C9A5F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5E13AAB1A8F901A00C9A5F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5E13AAD1A8F901A00C9A5F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = ARAlertControllerExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D5E13AAE1A8F901A00C9A5F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = ARAlertControllerExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D5E13AB01A8F901A00C9A5F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ARAlertControllerExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARAlertControllerExample.app/ARAlertControllerExample";
+			};
+			name = Debug;
+		};
+		D5E13AB11A8F901A00C9A5F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ARAlertControllerExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARAlertControllerExample.app/ARAlertControllerExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5E13A841A8F901900C9A5F2 /* Build configuration list for PBXProject "ARAlertControllerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E13AAA1A8F901A00C9A5F2 /* Debug */,
+				D5E13AAB1A8F901A00C9A5F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5E13AAC1A8F901A00C9A5F2 /* Build configuration list for PBXNativeTarget "ARAlertControllerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E13AAD1A8F901A00C9A5F2 /* Debug */,
+				D5E13AAE1A8F901A00C9A5F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5E13AAF1A8F901A00C9A5F2 /* Build configuration list for PBXNativeTarget "ARAlertControllerExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E13AB01A8F901A00C9A5F2 /* Debug */,
+				D5E13AB11A8F901A00C9A5F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5E13A811A8F901900C9A5F2 /* Project object */;
+}
