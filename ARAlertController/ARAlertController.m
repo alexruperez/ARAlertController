@@ -10,13 +10,60 @@
 
 #import "ARAlertController.h"
 
+
+#pragma mark - ARAlertControllerStorage
+
+@interface ARAlertControllerStorage : NSObject
+
++ (instancetype)sharedStorage;
+
+@property (strong, nonatomic) NSMutableArray *alertControllers;
+
+@end
+
+
+@implementation ARAlertControllerStorage
+
+#pragma mark - Initializers
+
++ (instancetype)sharedStorage
+{
+    static id sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = self.new;
+    });
+    
+    return sharedInstance;
+}
+
+#pragma mark - Properties
+
+- (NSMutableArray *)alertControllers
+{
+    if (!_alertControllers)
+    {
+        _alertControllers = NSMutableArray.new;
+    }
+    
+    return _alertControllers;
+}
+
+@end
+
+
+#pragma mark - ARAlertAction
+
 @interface ARAlertAction ()
 
 @property (nonatomic, copy) ARAlertActionHandler handler;
 
 @end
 
+
 @implementation ARAlertAction
+
+#pragma mark - Initializers
 
 + (instancetype)actionWithTitle:(NSString *)title style:(ARAlertActionStyle)style handler:(ARAlertActionHandler)handler
 {
@@ -37,12 +84,54 @@
     return self;
 }
 
+#pragma mark - Helpers
+
++ (instancetype)actionWithTitle:(NSString *)title style:(ARAlertActionStyle)style
+{
+    return [self actionWithTitle:title style:style handler:nil];
+}
+
++ (instancetype)defaultActionWithTitle:(NSString *)title handler:(ARAlertActionHandler)handler
+{
+    return [self actionWithTitle:title style:ARAlertActionStyleDefault handler:handler];
+}
+
++ (instancetype)cancelActionWithTitle:(NSString *)title handler:(ARAlertActionHandler)handler
+{
+    return [self actionWithTitle:title style:ARAlertActionStyleCancel handler:handler];
+}
+
++ (instancetype)destructiveActionWithTitle:(NSString *)title handler:(ARAlertActionHandler)handler
+{
+    return [self actionWithTitle:title style:ARAlertActionStyleDestructive handler:handler];
+}
+
++ (instancetype)defaultActionWithTitle:(NSString *)title
+{
+    return [self defaultActionWithTitle:title handler:nil];
+}
+
++ (instancetype)cancelActionWithTitle:(NSString *)title
+{
+    return [self cancelActionWithTitle:title handler:nil];
+}
+
++ (instancetype)destructiveActionWithTitle:(NSString *)title
+{
+    return [self destructiveActionWithTitle:title handler:nil];
+}
+
+#pragma mark - NSCopying
+
 - (instancetype)copyWithZone:(NSZone *)zone
 {
     return [[ARAlertAction allocWithZone:zone] initWithTitle:self.title.copy style:self.style handler:self.handler];
 }
 
 @end
+
+
+#pragma mark - ARAlertController
 
 @interface ARAlertController () <UIAlertViewDelegate, UIActionSheetDelegate>
 
@@ -59,7 +148,10 @@
 
 @end
 
+
 @implementation ARAlertController
+
+#pragma mark - Initializers
 
 + (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(ARAlertControllerStyle)preferredStyle
 {
@@ -84,6 +176,67 @@
     return self;
 }
 
+#pragma mark - Helpers
+
++ (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(ARAlertControllerStyle)preferredStyle actions:(NSArray *)actions
+{
+    ARAlertController *alertController = [self alertControllerWithTitle:title message:message preferredStyle:preferredStyle];
+    
+    for (ARAlertAction *alertAction in actions)
+    {
+        if ([alertAction isKindOfClass:ARAlertAction.class])
+        {
+            [alertController addAction:alertAction];
+        }
+    }
+    
+    return alertController;
+}
+
++ (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(ARAlertControllerStyle)preferredStyle actions:(NSArray *)actions textFieldConfigurationHandlers:(NSArray *)configurationHandlers
+{
+    ARAlertController *alertController = [self alertControllerWithTitle:title message:message preferredStyle:preferredStyle actions:actions];
+    
+    for (ARAlertControllerConfigurationHandler configurationHandler in configurationHandlers)
+    {
+        [alertController addTextFieldWithConfigurationHandler:configurationHandler];
+    }
+    
+    return alertController;
+}
+
++ (instancetype)actionSheetWithTitle:(NSString *)title message:(NSString *)message
+{
+    return [self actionSheetWithTitle:title message:message actions:nil];
+}
+
++ (instancetype)actionSheetWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray *)actions
+{
+    return [self actionSheetWithTitle:title message:message actions:actions textFieldConfigurationHandlers:nil];
+}
+
++ (instancetype)actionSheetWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray *)actions textFieldConfigurationHandlers:(NSArray *)configurationHandlers
+{
+    return [self alertControllerWithTitle:title message:message preferredStyle:ARAlertControllerStyleActionSheet actions:actions textFieldConfigurationHandlers:configurationHandlers];
+}
+
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message
+{
+    return [self alertWithTitle:title message:message actions:nil];
+}
+
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray *)actions
+{
+    return [self alertWithTitle:title message:message actions:actions textFieldConfigurationHandlers:nil];
+}
+
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray *)actions textFieldConfigurationHandlers:(NSArray *)configurationHandlers
+{
+    return [self alertControllerWithTitle:title message:message preferredStyle:ARAlertControllerStyleAlert actions:actions textFieldConfigurationHandlers:configurationHandlers];
+}
+
+#pragma mark - NSCopying
+
 - (instancetype)copyWithZone:(NSZone *)zone
 {
     ARAlertController *alertController = [[ARAlertController allocWithZone:zone] initWithTitle:self.title.copy message:self.message.copy preferredStyle:self.preferredStyle];
@@ -95,7 +248,8 @@
     
     for (UITextField *textField in self.textFields)
     {
-        [alertController addTextFieldWithConfigurationHandler:self.configurationHandlers[[NSString stringWithFormat:@"%ld", (unsigned long)textField.hash]]];
+        NSString *textFieldHash = [NSString stringWithFormat:@"%ld", (unsigned long)textField.hash];
+        [alertController addTextFieldWithConfigurationHandler:self.configurationHandlers[textFieldHash]];
     }
     
     alertController.alertController = self.alertController.copy;
@@ -108,6 +262,8 @@
     return alertController;
 }
 
+#pragma mark - Properties
+
 - (NSArray *)actions
 {
     return self.mutableActions.copy;
@@ -117,6 +273,8 @@
 {
     return self.mutableTextFields.copy;
 }
+
+#pragma mark - Configuration Methods
 
 - (void)addAction:(ARAlertAction *)action
 {
@@ -148,9 +306,12 @@
     
     if (configurationHandler)
     {
-        [self.configurationHandlers setObject:configurationHandler forKey:[NSString stringWithFormat:@"%ld", (unsigned long)textField.hash]];
+        NSString *textFieldHash = [NSString stringWithFormat:@"%ld", (unsigned long)textField.hash];
+        [self.configurationHandlers setObject:configurationHandler forKey:textFieldHash];
     }
 }
+
+#pragma mark - Presentation Methods
 
 - (void)presentInViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(void (^)(void))completion
 {
@@ -167,19 +328,7 @@
         for (UITextField *textFieldSaved in self.textFields)
         {
             [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-                NSString *textFieldSavedHash = [NSString stringWithFormat:@"%ld", (unsigned long)textFieldSaved.hash];
-                ARAlertControllerConfigurationHandler handler = self.configurationHandlers[textFieldSavedHash];
-                
-                if (handler)
-                {
-                    handler(textField);
-                    
-                    [self.configurationHandlers removeObjectForKey:textFieldSavedHash];
-                    
-                    [self.configurationHandlers setObject:handler forKey:[NSString stringWithFormat:@"%ld", (unsigned long)textField.hash]];
-                }
-                
-                [self.mutableTextFields replaceObjectAtIndex:[self.mutableTextFields indexOfObject:textFieldSaved] withObject:textField];
+                [self replaceTextField:textFieldSaved withTextField:textField];
             }];
         }
         
@@ -189,6 +338,8 @@
     {
         if (self.preferredStyle == ARAlertControllerStyleAlert)
         {
+            [[ARAlertControllerStorage sharedStorage].alertControllers addObject:self];
+            
             self.alertView = [[UIAlertView alloc] initWithTitle:self.title message:self.message delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
             
             for (ARAlertAction *action in self.actions)
@@ -211,19 +362,7 @@
                 
                 UITextField *textField = [self.alertView textFieldAtIndex:0];
                 
-                NSString *textFieldSavedHash = [NSString stringWithFormat:@"%ld", (unsigned long)textFieldSaved.hash];
-                ARAlertControllerConfigurationHandler handler = self.configurationHandlers[textFieldSavedHash];
-                
-                if (handler)
-                {
-                    handler(textField);
-                    
-                    [self.configurationHandlers removeObjectForKey:textFieldSavedHash];
-                    
-                    [self.configurationHandlers setObject:handler forKey:[NSString stringWithFormat:@"%ld", (unsigned long)textField.hash]];
-                }
-                
-                [self.mutableTextFields replaceObjectAtIndex:[self.mutableTextFields indexOfObject:textFieldSaved] withObject:textField];
+                [self replaceTextField:textFieldSaved withTextField:textField];
             }
             else if (self.textFields.count > 1)
             {
@@ -239,38 +378,16 @@
                 secondTextField.placeholder = nil;
                 secondTextField.secureTextEntry = NO;
                 
-                NSString *firstTextFieldSavedHash = [NSString stringWithFormat:@"%ld", (unsigned long)firstTextFieldSaved.hash];
-                NSString *secondTextFieldSavedHash = [NSString stringWithFormat:@"%ld", (unsigned long)secondTextFieldSaved.hash];
-                
-                ARAlertControllerConfigurationHandler firstHandler = self.configurationHandlers[firstTextFieldSavedHash];
-                ARAlertControllerConfigurationHandler secondHandler = self.configurationHandlers[secondTextFieldSavedHash];
-                
-                if (firstHandler)
-                {
-                    firstHandler(firstTextField);
-                    
-                    [self.configurationHandlers removeObjectForKey:firstTextFieldSavedHash];
-                    
-                    [self.configurationHandlers setObject:firstHandler forKey:[NSString stringWithFormat:@"%ld", (unsigned long)firstTextField.hash]];
-                }
-                
-                if (secondHandler)
-                {
-                    secondHandler(secondTextField);
-                    
-                    [self.configurationHandlers removeObjectForKey:secondTextFieldSavedHash];
-                    
-                    [self.configurationHandlers setObject:secondHandler forKey:[NSString stringWithFormat:@"%ld", (unsigned long)secondTextField.hash]];
-                }
-                
-                [self.mutableTextFields replaceObjectAtIndex:[self.mutableTextFields indexOfObject:firstTextFieldSaved] withObject:firstTextField];
-                [self.mutableTextFields replaceObjectAtIndex:[self.mutableTextFields indexOfObject:secondTextFieldSaved] withObject:secondTextField];
+                [self replaceTextField:firstTextFieldSaved withTextField:firstTextField];
+                [self replaceTextField:secondTextFieldSaved withTextField:secondTextField];
             }
             
             [self.alertView show];
         }
         else if (self.preferredStyle == ARAlertControllerStyleActionSheet)
         {
+            [[ARAlertControllerStorage sharedStorage].alertControllers addObject:self];
+            
             self.actionSheet = [[UIActionSheet alloc] initWithTitle:self.title delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
             
             for (ARAlertAction *action in self.actions)
@@ -320,54 +437,85 @@
     }
 }
 
+#pragma mark - Delegates
+
 - (void)didPresentAlertView:(UIAlertView *)alertView
 {
-    if (self.presentCompletion)
-    {
-        self.presentCompletion();
-    }
+    [self performPresentCompletion];
 }
 
 - (void)didPresentActionSheet:(UIActionSheet *)actionSheet
 {
+    [self performPresentCompletion];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self performActionAtIndex:buttonIndex];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self performActionAtIndex:buttonIndex];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self performDismissCompletion];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self performDismissCompletion];
+}
+
+#pragma mark - Private Methods
+
+- (void)performPresentCompletion
+{
     if (self.presentCompletion)
     {
         self.presentCompletion();
     }
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)performActionAtIndex:(NSInteger)actionIndex
 {
-    ARAlertAction *action = self.actions[buttonIndex];
+    ARAlertAction *action = self.actions[actionIndex];
     if (action.handler)
     {
         action.handler(action);
     }
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    ARAlertAction *action = self.actions[buttonIndex];
-    if (action.handler)
-    {
-        action.handler(action);
-    }
-}
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+- (void)performDismissCompletion
 {
     if (self.dismissCompletion)
     {
         self.dismissCompletion();
     }
+    
+    [[ARAlertControllerStorage sharedStorage].alertControllers removeObject:self];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+- (void)replaceTextField:(UITextField *)textFieldSaved withTextField:(UITextField *)textField
 {
-    if (self.dismissCompletion)
+    NSString *textFieldSavedHash = [NSString stringWithFormat:@"%ld", (unsigned long)textFieldSaved.hash];
+    ARAlertControllerConfigurationHandler handler = self.configurationHandlers[textFieldSavedHash];
+    
+    if (handler)
     {
-        self.dismissCompletion();
+        handler(textField);
+        
+        [self.configurationHandlers removeObjectForKey:textFieldSavedHash];
+        
+        NSString *textFieldHash = [NSString stringWithFormat:@"%ld", (unsigned long)textField.hash];
+        
+        [self.configurationHandlers setObject:handler forKey:textFieldHash];
     }
+    
+    [self.mutableTextFields replaceObjectAtIndex:[self.mutableTextFields indexOfObject:textFieldSaved] withObject:textField];
 }
 
 @end
+

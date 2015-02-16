@@ -32,13 +32,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ### Example
 
 ```objectivec
-self.alert = [ARAlertController alertControllerWithTitle:@"My Alert" message:@"This is an alert." preferredStyle:ARAlertControllerStyleAlert];
+ARAlertController *alert = [ARAlertController alertControllerWithTitle:@"My Alert" message:@"This is an alert." preferredStyle:ARAlertControllerStyleAlert];
 
 ARAlertAction* defaultAction = [ARAlertAction actionWithTitle:@"OK" style:ARAlertActionStyleDefault handler:^(ARAlertAction * action) {}];
 
-[self.alert addAction:defaultAction];
+[alert addAction:defaultAction];
 
-[self.alert presentInViewController:self animated:YES completion:nil];
+[alert presentInViewController:self animated:YES completion:nil];
 ```
 
 # Etc.
