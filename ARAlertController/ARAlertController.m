@@ -336,10 +336,10 @@
     }
     else
     {
+        [[ARAlertControllerStorage sharedStorage].alertControllers addObject:self];
+        
         if (self.preferredStyle == ARAlertControllerStyleAlert)
         {
-            [[ARAlertControllerStorage sharedStorage].alertControllers addObject:self];
-            
             self.alertView = [[UIAlertView alloc] initWithTitle:self.title message:self.message delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
             
             for (ARAlertAction *action in self.actions)
@@ -386,8 +386,6 @@
         }
         else if (self.preferredStyle == ARAlertControllerStyleActionSheet)
         {
-            [[ARAlertControllerStorage sharedStorage].alertControllers addObject:self];
-            
             self.actionSheet = [[UIActionSheet alloc] initWithTitle:self.title delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
             
             for (ARAlertAction *action in self.actions)
