@@ -212,12 +212,7 @@
 
 + (instancetype)actionSheetWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray *)actions
 {
-    return [self actionSheetWithTitle:title message:message actions:actions textFieldConfigurationHandlers:nil];
-}
-
-+ (instancetype)actionSheetWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray *)actions textFieldConfigurationHandlers:(NSArray *)configurationHandlers
-{
-    return [self alertControllerWithTitle:title message:message preferredStyle:ARAlertControllerStyleActionSheet actions:actions textFieldConfigurationHandlers:configurationHandlers];
+    return [self alertControllerWithTitle:title message:message preferredStyle:ARAlertControllerStyleActionSheet actions:actions textFieldConfigurationHandlers:nil];
 }
 
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message
@@ -285,7 +280,9 @@
         alertAction = [UIAlertAction actionWithTitle:action.title style:(UIAlertActionStyle)action.style handler:^(UIAlertAction *alertAction) {
             if (action.handler)
             {
-                action.handler(action);
+                [NSOperationQueue.mainQueue addOperationWithBlock:^{
+                    action.handler(action);
+                }];
             }
         }];
     }
@@ -482,7 +479,9 @@
     ARAlertAction *action = self.actions[actionIndex];
     if (action.handler)
     {
-        action.handler(action);
+        [NSOperationQueue.mainQueue addOperationWithBlock:^{
+            action.handler(action);
+        }];
     }
 }
 

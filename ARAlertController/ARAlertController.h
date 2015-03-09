@@ -151,8 +151,6 @@ typedef void (^ARAlertControllerConfigurationHandler)(UITextField *textField);
 
 + (instancetype)actionSheetWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray *)actions;
 
-+ (instancetype)actionSheetWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray *)actions textFieldConfigurationHandlers:(NSArray *)configurationHandlers;
-
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message;
 
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray *)actions;

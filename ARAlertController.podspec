@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ARAlertController"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "UIAlertController compatible iOS >= 5.0"
   s.homepage         = "https://github.com/alexruperez/ARAlertController"
   s.screenshots      = "https://www.service2media.com/wp-content/uploads/2014/08/UIAlertControl.png"
