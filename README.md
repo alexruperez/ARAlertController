@@ -12,7 +12,11 @@
 
 UIAlertController compatible iOS >= 5.0
 
-![ARAlertController Screenshot](https://www.service2media.com/wp-content/uploads/2014/08/UIAlertControl.png)
+#### iOS >= 8
+![ARAlertController iOS8 Alert](https://raw.githubusercontent.com/alexruperez/ARAlertController/master/alert8.png) ![ARAlertController iOS8 ActionSheet](https://raw.githubusercontent.com/alexruperez/ARAlertController/master/sheet8.png)
+
+#### iOS <= 7
+![ARAlertController iOS7 Alert](https://raw.githubusercontent.com/alexruperez/ARAlertController/master/alert7.png) ![ARAlertController iOS7 ActionSheet](https://raw.githubusercontent.com/alexruperez/ARAlertController/master/sheet7.png)
 
 ## Usage
 
