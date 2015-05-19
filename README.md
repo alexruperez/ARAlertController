@@ -6,6 +6,7 @@
 [![Version](https://img.shields.io/cocoapods/v/ARAlertController.svg?style=flat)](http://cocoadocs.org/docsets/ARAlertController)
 [![License](https://img.shields.io/cocoapods/l/ARAlertController.svg?style=flat)](http://cocoadocs.org/docsets/ARAlertController)
 [![Platform](https://img.shields.io/cocoapods/p/ARAlertController.svg?style=flat)](http://cocoadocs.org/docsets/ARAlertController)
+[![Dependency Status](https://www.versioneye.com/user/projects/555b0450634daa30fb0001f5/badge.svg?style=flat)](https://www.versioneye.com/user/projects/555b0450634daa30fb0001f5)
 [![Analytics](https://ga-beacon.appspot.com/UA-55329295-1/ARAlertController/readme?pixel)](https://github.com/igrigorik/ga-beacon)
 
 ## Overview
