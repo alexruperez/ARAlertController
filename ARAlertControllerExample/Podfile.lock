@@ -1,10 +1,10 @@
 PODS:
-  - ARAlertController (0.1.2)
+  - ARAlertController (0.1.3)
 
 DEPENDENCIES:
   - ARAlertController (~> 0.1)
 
 SPEC CHECKSUMS:
-  ARAlertController: 95b05bb8ed3e08d0bde5d0c2a2c6a78c1a7216e9
+  ARAlertController: 926419ea0f263951b524990e2d74920d91609b63
 
-COCOAPODS: 0.36.0.rc.1
+COCOAPODS: 0.37.1
