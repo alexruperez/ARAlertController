@@ -1,7 +1,6 @@
 # ARAlertController
 
 [![Join the chat at https://gitter.im/alexruperez/ARAlertController](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/alexruperez/ARAlertController?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 [![Twitter](http://img.shields.io/badge/contact-@alexruperez-blue.svg?style=flat)](http://twitter.com/alexruperez)
 [![GitHub Issues](http://img.shields.io/github/issues/alexruperez/ARAlertController.svg?style=flat)](http://github.com/alexruperez/ARAlertController/issues)
 [![CI Status](http://img.shields.io/travis/alexruperez/ARAlertController.svg?style=flat)](https://travis-ci.org/alexruperez/ARAlertController)
